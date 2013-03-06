@@ -120,15 +120,8 @@ Bundle "tomtom/tlib_vim"
 "Bundle "garbas/vim-snipmate"
 
 "插件 语法/高亮
-Bundle 'JavaScript-syntax'
-Bundle 'jQuery'
-Bundle 'othree/html5.vim'
-Bundle 'groenewege/vim-less'
-Bundle 'Markdown'
-Bundle 'Markdown-syntax'
-Bundle 'php.vim-html-enhanced'
-"HTML混排缩进改善
-Bundle "pangloss/vim-javascript"
+Bundle 'OmniCppComplete'
+
 
 "按特殊字符对其， 需要修改源码以支持中文字符 https://github.com/muzuiget/hacking-patches/blob/master/tabular_cjk_width.patch
 Bundle 'Tabular'
@@ -141,12 +134,6 @@ Bundle 'scrooloose/nerdtree'
 "autocmd vimenter * NERDTree
 
 "Bundle 'hallettj/jslint.vim'
-
-"即时预览CSS颜色
-"Bundle 'skammer/vim-css-color'
-"Bundle 'ZenCoding.vim'
-"Bundle 'The-NERD-tree'
-"Bundle 'SuperTab'
 
 "激活插件与文件类型的依赖关系
 filetype plugin indent on     " required! 
