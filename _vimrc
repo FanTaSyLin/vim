@@ -3,160 +3,191 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-"é…è‰²æ–¹æ¡ˆ
+"ÅäÉ«·½°¸
 colorscheme blackboard 
-"éšè—å·¥å…·æ å’Œèœå•æ 
+
+"Òş²Ø¹¤¾ßÀ¸ºÍ²Ëµ¥À¸
 set guioptions-=m
 set guioptions-=T
 
-"è®¾ç½®å·¥ä½œç›®å½•ä¸ºå½“å‰ç¼–è¾‘æ–‡ä»¶çš„ç›®å½•
+"ÉèÖÃ¹¤×÷Ä¿Â¼Îªµ±Ç°±à¼­ÎÄ¼şµÄÄ¿Â¼
 set bsdir=buffer
 set autochdir
-"ç¼–ç è®¾ç½®
+"±àÂëÉèÖÃ
 set enc=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
-"è¯­è¨€è®¾ç½®
+"ÓïÑÔÉèÖÃ
 set langmenu=zh_CN.UTF-8
 language message zh_CN.UTF-8
-"set guifont=NSimSun:h10
-
 set guifont=Monaco:h9
 set gfw=YaHei\ Consolas\ Hybrid:h9
-
-"set guifont=Consolas:h12
-"set guifont=YaHei\ Consolas\ Hybrid:h12
-"set guifont=Yahei\ Mono:h12
 
 set helplang=cn
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-"ç¦æ­¢ç”Ÿæˆä¸´æ—¶æ–‡ä»¶
+"½ûÖ¹Éú³ÉÁÙÊ±ÎÄ¼ş
 set nobackup
 
-"æœç´¢å¿½ç•¥å¤§å°å†™
+"ËÑË÷ºöÂÔ´óĞ¡Ğ´
 set ignorecase 
 
-"æœç´¢é€å­—ç¬¦é«˜äº®
+"ËÑË÷Öğ×Ö·û¸ßÁÁ
 set incsearch
+"ËÑËØÊ±¸ßÁÁÏÔÊ¾±»ÕÒµ½µÄÎÄ±¾
+set hlsearch
 
-"è¡Œå†…æ›¿æ¢
+" Éè¶¨ << ºÍ >> ÃüÁîÒÆ¶¯Ê±µÄ¿í¶ÈÎª 4
+set shiftwidth=4
+set smarttab
+set history=1024
+
+"ĞĞÄÚÌæ»»
 set gdefault
 
-"å§‹ç»ˆæ˜¾ç¤ºè¡Œå·
-set nu!
+"Ê¼ÖÕÏÔÊ¾ĞĞºÅ
+set number
 
-"æ˜¾ç¤ºå…‰æ ‡çš„åæ ‡
+"ÏÔÊ¾¹â±êµÄ×ø±ê
 set ruler
 
-"é«˜äº®æ•´è¡Œ
+"¸ßÁÁÕûĞĞ
 set cursorline
 
-"è‡ªåŠ¨ç¼©è¿›
+"×Ô¶¯Ëõ½ø
 set noautoindent
 set cindent
 set smartindent
 
-"Tabé”®çš„å®½åº¦
+"Tab¼üµÄ¿í¶È
 set shiftwidth=4
 set tabstop=4
 
-"Tabé”®æ’å…¥å››ä¸ªç©ºæ ¼,ä»…PHP
-autocmd FileType php set shiftwidth=4 tabstop=4 expandtab softtabstop=4
-
-"è¾“å…¥æ³•è®¾ç½®
+"ÊäÈë·¨ÉèÖÃ
 if has('multi_byte_ime')
-	"æœªå¼€å¯IMEæ—¶å…‰æ ‡èƒŒæ™¯è‰²
+	"Î´¿ªÆôIMEÊ±¹â±ê±³¾°É«
 	hi Cursor guifg=bg guibg=Orange gui=NONE
-	"å¼€å¯IMEæ—¶å…‰æ ‡èƒŒæ™¯è‰²
+	"¿ªÆôIMEÊ±¹â±ê±³¾°É«
 	hi CursorIM guifg=NONE guibg=Skyblue gui=NONE
-	" å…³é—­Vimçš„è‡ªåŠ¨åˆ‡æ¢IMEè¾“å…¥æ³•(æ’å…¥æ¨¡å¼å’Œæ£€ç´¢æ¨¡å¼)
+	" ¹Ø±ÕVimµÄ×Ô¶¯ÇĞ»»IMEÊäÈë·¨(²åÈëÄ£Ê½ºÍ¼ìË÷Ä£Ê½)
 	set iminsert=0 imsearch=0
-	" æ’å…¥æ¨¡å¼è¾“å…¥æ³•çŠ¶æ€æœªè¢«è®°å½•æ—¶ï¼Œé»˜è®¤å…³é—­IME
+	" ²åÈëÄ£Ê½ÊäÈë·¨×´Ì¬Î´±»¼ÇÂ¼Ê±£¬Ä¬ÈÏ¹Ø±ÕIME
 	"inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
 
-"ä¸Windowså…±äº«å‰ªè´´æ¿
+"ÓëWindows¹²Ïí¼ôÌù°å
 set clipboard+=unnamed
 
-"ç¼–è¾‘vimrcä¹‹åï¼Œé‡æ–°åŠ è½½
+"±à¼­vimrcÖ®ºó£¬ÖØĞÂ¼ÓÔØ
 autocmd! bufwritepost _vimrc source $VIM/_vimrc
 
-"##########æ’ä»¶ç®¡ç† å¼€å§‹#############
-filetype off
+"##########²å¼ş¹ÜÀí ¿ªÊ¼#############
+"¸ü¶à²å¼ş¼û£º http://vim-scripts.org/vim/scripts.html
+filetype on
 set rtp+=$VIM/vimfiles/bundle/vundle/
 call vundle#rc('$VIM/vimfiles/bundle/')
 
-"æ’ä»¶ç®¡ç†æ ¸å¿ƒåº“
+"²å¼ş¹ÜÀíºËĞÄ¿â
 Bundle 'gmarik/vundle'
 
-" original repos on github<br>Bundle 'mattn/zencoding-vim'
-Bundle 'drmingdrmer/xptemplate'
-" vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'bufexplorer.zip'
+"ÊµÏÖÔ´´úÂë½á¹¹ºÍº¯ÊıÁĞ±íÕ¹Ê¾
 Bundle 'taglist.vim'
-Bundle 'Mark'
-Bundle 'The-NERD-tree'
-Bundle 'matrix.vim'
-Bundle 'closetag.vim'
-Bundle 'The-NERD-Commenter'
-Bundle 'matchit.zip'
-Bundle 'AutoComplPop'
-Bundle 'jsbeautify'
-Bundle 'YankRing.vim'
-"ä»£ç è¡¥å…¨
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neocomplcache-snippets-complete'
-"ä»£ç æ®µè‡ªåŠ¨ç”Ÿæˆ
-"Bundle 'snipMate'
+map <F3> :silent! Tlist<CR> 
 
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-"Bundle "snipmate-snippets"
-"Bundle "garbas/vim-snipmate"
-
-"æ’ä»¶ è¯­æ³•/é«˜äº®
+"ÊµÏÖC/C++ÓïÑÔ×Ô¶¯²¹È«
 Bundle 'OmniCppComplete'
+" build tags of your own project with CTRL+F12
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_MayCompleteDot = 1 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 1 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 1 " autocomplete after ::
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
+"×¢ÊÍ²å¼ş
+Bundle 'The-NERD-Commenter'
 
-"æŒ‰ç‰¹æ®Šå­—ç¬¦å¯¹å…¶ï¼Œ éœ€è¦ä¿®æ”¹æºç ä»¥æ”¯æŒä¸­æ–‡å­—ç¬¦ https://github.com/muzuiget/hacking-patches/blob/master/tabular_cjk_width.patch
-Bundle 'Tabular'
+"ÓÉ×¢ÊÍÉú³ÉÎÄµµ£¬²¢ÇÒÄÜ¹»¿ìËÙÉú³Éº¯Êı±ê×¼×¢ÊÍ
+Bundle 'DoxygenToolkit.vim'
+map fg : Dox<cr>
+let g:DoxygenToolkit_authorName="Xiaoyang Zhu"
+let g:DoxygenToolkit_licenseTag="My own license\<enter>"
+let g:DoxygenToolkit_undocTag="DOXIGEN_SKIP_BLOCK"
+let g:DoxygenToolkit_briefTag_pre = "@brief\t"
+let g:DoxygenToolkit_paramTag_pre = "@param\t"
+let g:DoxygenToolkit_returnTag = "@return\t"
+let g:DoxygenToolkit_briefTag_funcName = "no"
+let g:DoxygenToolkit_maxFunctionProtoLines = 30
 
-"statuslines å¢å¼º
-Bundle 'scrooloose/vim-statline'
+"ÊµÏÖcppºÍhÎÄ¼ş¿ìËÙÇĞ»»
+Bundle 'a.vim'
 
-"æ–‡ä»¶ç®¡ç†å™¨
-Bundle 'scrooloose/nerdtree'
-"autocmd vimenter * NERDTree
+"ÎÄ¼ş¹ÜÀíÆ÷
+Bundle 'The-NERD-tree'
+" ÈÃTree°Ñ×Ô¼º¸ø×°ÊÎµÃ¶à×Ë¶à²ÊÆ¯ÁÁµã
+let NERDChristmasTree=1
+" ¿ØÖÆµ±¹â±êÒÆ¶¯³¬¹ıÒ»¶¨¾àÀëÊ±£¬ÊÇ·ñ×Ô¶¯½«½¹µãµ÷Õûµ½ÆÁÖĞĞÄ
+let NERDTreeAutoCenter=1
+" Ö¸¶¨Êó±êÄ£Ê½(1.Ë«»÷´ò¿ª 2.µ¥Ä¿Â¼Ë«ÎÄ¼ş 3.µ¥»÷´ò¿ª)
+let NERDTreeMouseMode=2
+" ÊÇ·ñÄ¬ÈÏÏÔÊ¾ÊéÇ©ÁĞ±í
+let NERDTreeShowBookmarks=1
+" ÊÇ·ñÄ¬ÈÏÏÔÊ¾ÎÄ¼ş
+let NERDTreeShowFiles=1
+" ÊÇ·ñÄ¬ÈÏÏÔÊ¾ĞĞºÅ
+let NERDTreeShowLineNumbers=0
+" ´°¿ÚÎ»ÖÃ£¨'left' or 'right'£©
+let NERDTreeWinPos='left'
+" ´°¿Ú¿í¶È
+let NERDTreeWinSize=31
+"A-t : ´ò¿ªNERDTree
+map <silent> <C-t>   <ESC>:NERDTree<CR>
+" ÒÔ´ò¿ªNERDTreeÊ±µÄÄ¿Â¼Îª¹¤×÷Ä¿Â¼
+let NERDTreeChDirMode=1
 
-"Bundle 'hallettj/jslint.vim'
-
-"æ¿€æ´»æ’ä»¶ä¸æ–‡ä»¶ç±»å‹çš„ä¾èµ–å…³ç³»
-filetype plugin indent on     " required! 
-"##########æ’ä»¶ç®¡ç† ç»“æŸ#############
-"è‡ªå®šä¹‰å…³è”æ–‡ä»¶ç±»å‹
-au BufNewFile,BufRead *.less set filetype=css
-au BufNewFile,BufRead *.phtml set filetype=php
-au BufRead,BufNewFile *.js set ft=javascript.jquery
-
-"--------æ’ä»¶è®¾ç½®
-
-"---NeoComplCache å¯åŠ¨å¹¶ä½¿ç”¨Tabè§¦å‘
+"´úÂë²¹È«
+Bundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1 
-
 " Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
 " Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 2
+let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+set completeopt-=preview
+
+"Bundle "asins/snipmate-snippets"
+Bundle "Shougo/neosnippet"
+let g:neosnippet#snippets_directory=$VIMFILES.'/bundle/snipmate-snippets/snippets'
+" Plugin key-mappings.
+imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+
+Bundle 'honza/snipmate-snippets'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "snipmate-snippets"
+Bundle "garbas/vim-snipmate"
+"°´ÌØÊâ×Ö·û¶ÔÆä£¬ ĞèÒªĞŞ¸ÄÔ´ÂëÒÔÖ§³ÖÖĞÎÄ×Ö·û https://github.com/muzuiget/hacking-patches/blob/master/tabular_cjk_width.patch
+Bundle 'Tabular'
+
+"statuslines ÔöÇ¿
+Bundle 'scrooloose/vim-statline'
+
+"¼¤»î²å¼şÓëÎÄ¼şÀàĞÍµÄÒÀÀµ¹ØÏµ
+filetype plugin indent on     " required! 
+"##########²å¼ş¹ÜÀí ½áÊø#############
+
+" tagsÄ¿Â¼
+set tags+=$VIM/vimfiles/tags/cpp
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
@@ -167,30 +198,19 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 " AutoComplPop like behavior.
 let g:neocomplcache_enable_auto_select = 1
 
-autocmd FileType php,phtml setlocal omnifunc=phpcomplete#CompletePHP
-autocmd FileType css,less setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-"--------è‡ªå®šä¹‰å¿«æ·é”®
-
-" ç¼–è¾‘æ¨¡å¼è¿›è¡Œå…‰æ ‡ç§»åŠ¨
+" ±à¼­Ä£Ê½½øĞĞ¹â±êÒÆ¶¯
 inoremap <C-h> <left>
 inoremap <C-l> <right>
 inoremap <C-j> <C-o>gj
 inoremap <C-k> <C-o>gk
 
-"A-t : æ‰“å¼€NERDTree
-map <silent> <C-t>   <ESC>:NERDTree<CR>
-" ä»¥æ‰“å¼€NERDTreeæ—¶çš„ç›®å½•ä¸ºå·¥ä½œç›®å½•
-let NERDTreeChDirMode=1
-
-"mm : è§„èŒƒè¡Œé¦–ç©ºæ ¼<cr>å»é™¤å¤šä½™å­—ç¬¦<cr>åˆ é™¤ç©ºç™½è¡Œ<cr>è§„èŒƒè¡Œæ•°
+"mm : ¹æ·¶ĞĞÊ×¿Õ¸ñ<cr>È¥³ı¶àÓà×Ö·û<cr>É¾³ı¿Õ°×ĞĞ<cr>¹æ·¶ĞĞÊı
 nmap mm :%s/\r//g<cr>
 
-"ff : å‰åè¡¥å…¨
+"ff : Ç°ºó²¹È«
 "vmap ff <Esc>`>i')?><Esc>`<i<?=$this->_('<Esc>
 vmap ff "zdi<?=$this->_('<C-R>z');?><ESC>
 
