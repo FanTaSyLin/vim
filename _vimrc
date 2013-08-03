@@ -3,21 +3,21 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-"ÅäÉ«·½°¸
+"é…è‰²æ–¹æ¡ˆ
 colorscheme blackboard 
 
-"Òş²Ø¹¤¾ßÀ¸ºÍ²Ëµ¥À¸
+"éšè—å·¥å…·æ å’Œèœå•æ 
 set guioptions-=m
 set guioptions-=T
 
-"ÉèÖÃ¹¤×÷Ä¿Â¼Îªµ±Ç°±à¼­ÎÄ¼şµÄÄ¿Â¼
+"è®¾ç½®å·¥ä½œç›®å½•ä¸ºå½“å‰ç¼–è¾‘æ–‡ä»¶çš„ç›®å½•
 set bsdir=buffer
 set autochdir
-"±àÂëÉèÖÃ
+"ç¼–ç è®¾ç½®
 set enc=utf-8
 set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
 
-"ÓïÑÔÉèÖÃ
+"è¯­è¨€è®¾ç½®
 set langmenu=zh_CN.UTF-8
 language message zh_CN.UTF-8
 set guifont=Monaco:h9
@@ -27,77 +27,80 @@ set helplang=cn
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 
-"½ûÖ¹Éú³ÉÁÙÊ±ÎÄ¼ş
+"ç¦æ­¢ç”Ÿæˆä¸´æ—¶æ–‡ä»¶
 set nobackup
 
-"ËÑË÷ºöÂÔ´óĞ¡Ğ´
+"æœç´¢å¿½ç•¥å¤§å°å†™
 set ignorecase 
 
-"ËÑË÷Öğ×Ö·û¸ßÁÁ
+"æœç´¢é€å­—ç¬¦é«˜äº®
 set incsearch
-"ËÑËØÊ±¸ßÁÁÏÔÊ¾±»ÕÒµ½µÄÎÄ±¾
+"æœç´ æ—¶é«˜äº®æ˜¾ç¤ºè¢«æ‰¾åˆ°çš„æ–‡æœ¬
 set hlsearch
 
-" Éè¶¨ << ºÍ >> ÃüÁîÒÆ¶¯Ê±µÄ¿í¶ÈÎª 4
+" è®¾å®š << å’Œ >> å‘½ä»¤ç§»åŠ¨æ—¶çš„å®½åº¦ä¸º 4
 set shiftwidth=4
 set smarttab
 set history=1024
 
-"ĞĞÄÚÌæ»»
+"è¡Œå†…æ›¿æ¢
 set gdefault
 
-"Ê¼ÖÕÏÔÊ¾ĞĞºÅ
+"å§‹ç»ˆæ˜¾ç¤ºè¡Œå·
 set number
 
-"ÏÔÊ¾¹â±êµÄ×ø±ê
+"æ˜¾ç¤ºå…‰æ ‡çš„åæ ‡
 set ruler
 
-"¸ßÁÁÕûĞĞ
+"é«˜äº®æ•´è¡Œ
 set cursorline
 
-"×Ô¶¯Ëõ½ø
+"è‡ªåŠ¨ç¼©è¿›
 set noautoindent
 set cindent
 set smartindent
 
-"Tab¼üµÄ¿í¶È
+"Tabé”®çš„å®½åº¦
 set shiftwidth=4
 set tabstop=4
 
-"ÊäÈë·¨ÉèÖÃ
+"è¾“å…¥æ³•è®¾ç½®
 if has('multi_byte_ime')
-	"Î´¿ªÆôIMEÊ±¹â±ê±³¾°É«
+	"æœªå¼€å¯IMEæ—¶å…‰æ ‡èƒŒæ™¯è‰²
 	hi Cursor guifg=bg guibg=Orange gui=NONE
-	"¿ªÆôIMEÊ±¹â±ê±³¾°É«
+	"å¼€å¯IMEæ—¶å…‰æ ‡èƒŒæ™¯è‰²
 	hi CursorIM guifg=NONE guibg=Skyblue gui=NONE
-	" ¹Ø±ÕVimµÄ×Ô¶¯ÇĞ»»IMEÊäÈë·¨(²åÈëÄ£Ê½ºÍ¼ìË÷Ä£Ê½)
+	" å…³é—­Vimçš„è‡ªåŠ¨åˆ‡æ¢IMEè¾“å…¥æ³•(æ’å…¥æ¨¡å¼å’Œæ£€ç´¢æ¨¡å¼)
 	set iminsert=0 imsearch=0
-	" ²åÈëÄ£Ê½ÊäÈë·¨×´Ì¬Î´±»¼ÇÂ¼Ê±£¬Ä¬ÈÏ¹Ø±ÕIME
+	" æ’å…¥æ¨¡å¼è¾“å…¥æ³•çŠ¶æ€æœªè¢«è®°å½•æ—¶ï¼Œé»˜è®¤å…³é—­IME
 	"inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 endif
 
-"ÓëWindows¹²Ïí¼ôÌù°å
+"ä¸Windowså…±äº«å‰ªè´´æ¿
 set clipboard+=unnamed
 
-"±à¼­vimrcÖ®ºó£¬ÖØĞÂ¼ÓÔØ
+"ç¼–è¾‘vimrcä¹‹åï¼Œé‡æ–°åŠ è½½
 autocmd! bufwritepost _vimrc source $VIM/_vimrc
 
-"##########²å¼ş¹ÜÀí ¿ªÊ¼#############
-"¸ü¶à²å¼ş¼û£º http://vim-scripts.org/vim/scripts.html
+"##########æ’ä»¶ç®¡ç† å¼€å§‹#############
+"æ›´å¤šæ’ä»¶è§ï¼š http://vim-scripts.org/vim/scripts.html
 filetype on
 set rtp+=$VIM/vimfiles/bundle/vundle/
 call vundle#rc('$VIM/vimfiles/bundle/')
 
-"²å¼ş¹ÜÀíºËĞÄ¿â
+"æ’ä»¶ç®¡ç†æ ¸å¿ƒåº“
 Bundle 'gmarik/vundle'
 
-"ÊµÏÖÔ´´úÂë½á¹¹ºÍº¯ÊıÁĞ±íÕ¹Ê¾
+"å®ç°æºä»£ç ç»“æ„å’Œå‡½æ•°åˆ—è¡¨å±•ç¤º
 Bundle 'taglist.vim'
 map <F3> :silent! Tlist<CR> 
 
-"ÊµÏÖC/C++ÓïÑÔ×Ô¶¯²¹È«
+"å®ç°C/C++è¯­è¨€è‡ªåŠ¨è¡¥å…¨
 Bundle 'OmniCppComplete'
 " build tags of your own project with CTRL+F12
+set tags=tags;
+" tagsç›®å½•
+set tags+=$VIM/vimfiles/tags/cpp
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 let OmniCpp_NamespaceSearch = 1
 let OmniCpp_GlobalScopeSearch = 1
@@ -111,10 +114,10 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-"×¢ÊÍ²å¼ş
+"æ³¨é‡Šæ’ä»¶
 Bundle 'The-NERD-Commenter'
 
-"ÓÉ×¢ÊÍÉú³ÉÎÄµµ£¬²¢ÇÒÄÜ¹»¿ìËÙÉú³Éº¯Êı±ê×¼×¢ÊÍ
+"ç”±æ³¨é‡Šç”Ÿæˆæ–‡æ¡£ï¼Œå¹¶ä¸”èƒ½å¤Ÿå¿«é€Ÿç”Ÿæˆå‡½æ•°æ ‡å‡†æ³¨é‡Š
 Bundle 'DoxygenToolkit.vim'
 map fg : Dox<cr>
 let g:DoxygenToolkit_authorName="Xiaoyang Zhu"
@@ -126,33 +129,33 @@ let g:DoxygenToolkit_returnTag = "@return\t"
 let g:DoxygenToolkit_briefTag_funcName = "no"
 let g:DoxygenToolkit_maxFunctionProtoLines = 30
 
-"ÊµÏÖcppºÍhÎÄ¼ş¿ìËÙÇĞ»»
+"å®ç°cppå’Œhæ–‡ä»¶å¿«é€Ÿåˆ‡æ¢
 Bundle 'a.vim'
 
-"ÎÄ¼ş¹ÜÀíÆ÷
+"æ–‡ä»¶ç®¡ç†å™¨
 Bundle 'The-NERD-tree'
-" ÈÃTree°Ñ×Ô¼º¸ø×°ÊÎµÃ¶à×Ë¶à²ÊÆ¯ÁÁµã
+" è®©TreeæŠŠè‡ªå·±ç»™è£…é¥°å¾—å¤šå§¿å¤šå½©æ¼‚äº®ç‚¹
 let NERDChristmasTree=1
-" ¿ØÖÆµ±¹â±êÒÆ¶¯³¬¹ıÒ»¶¨¾àÀëÊ±£¬ÊÇ·ñ×Ô¶¯½«½¹µãµ÷Õûµ½ÆÁÖĞĞÄ
+" æ§åˆ¶å½“å…‰æ ‡ç§»åŠ¨è¶…è¿‡ä¸€å®šè·ç¦»æ—¶ï¼Œæ˜¯å¦è‡ªåŠ¨å°†ç„¦ç‚¹è°ƒæ•´åˆ°å±ä¸­å¿ƒ
 let NERDTreeAutoCenter=1
-" Ö¸¶¨Êó±êÄ£Ê½(1.Ë«»÷´ò¿ª 2.µ¥Ä¿Â¼Ë«ÎÄ¼ş 3.µ¥»÷´ò¿ª)
+" æŒ‡å®šé¼ æ ‡æ¨¡å¼(1.åŒå‡»æ‰“å¼€ 2.å•ç›®å½•åŒæ–‡ä»¶ 3.å•å‡»æ‰“å¼€)
 let NERDTreeMouseMode=2
-" ÊÇ·ñÄ¬ÈÏÏÔÊ¾ÊéÇ©ÁĞ±í
+" æ˜¯å¦é»˜è®¤æ˜¾ç¤ºä¹¦ç­¾åˆ—è¡¨
 let NERDTreeShowBookmarks=1
-" ÊÇ·ñÄ¬ÈÏÏÔÊ¾ÎÄ¼ş
+" æ˜¯å¦é»˜è®¤æ˜¾ç¤ºæ–‡ä»¶
 let NERDTreeShowFiles=1
-" ÊÇ·ñÄ¬ÈÏÏÔÊ¾ĞĞºÅ
+" æ˜¯å¦é»˜è®¤æ˜¾ç¤ºè¡Œå·
 let NERDTreeShowLineNumbers=0
-" ´°¿ÚÎ»ÖÃ£¨'left' or 'right'£©
+" çª—å£ä½ç½®ï¼ˆ'left' or 'right'ï¼‰
 let NERDTreeWinPos='left'
-" ´°¿Ú¿í¶È
+" çª—å£å®½åº¦
 let NERDTreeWinSize=31
-"A-t : ´ò¿ªNERDTree
+"A-t : æ‰“å¼€NERDTree
 map <silent> <C-t>   <ESC>:NERDTree<CR>
-" ÒÔ´ò¿ªNERDTreeÊ±µÄÄ¿Â¼Îª¹¤×÷Ä¿Â¼
+" ä»¥æ‰“å¼€NERDTreeæ—¶çš„ç›®å½•ä¸ºå·¥ä½œç›®å½•
 let NERDTreeChDirMode=1
 
-"´úÂë²¹È«
+"ä»£ç è¡¥å…¨
 Bundle 'Shougo/neocomplcache'
 let g:neocomplcache_enable_at_startup = 1 
 " Use smartcase.
@@ -176,18 +179,23 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "snipmate-snippets"
 Bundle "garbas/vim-snipmate"
-"°´ÌØÊâ×Ö·û¶ÔÆä£¬ ĞèÒªĞŞ¸ÄÔ´ÂëÒÔÖ§³ÖÖĞÎÄ×Ö·û https://github.com/muzuiget/hacking-patches/blob/master/tabular_cjk_width.patch
+"æŒ‰ç‰¹æ®Šå­—ç¬¦å¯¹å…¶ï¼Œ éœ€è¦ä¿®æ”¹æºç ä»¥æ”¯æŒä¸­æ–‡å­—ç¬¦ https://github.com/muzuiget/hacking-patches/blob/master/tabular_cjk_width.patch
 Bundle 'Tabular'
 
-"statuslines ÔöÇ¿
+"statuslines å¢å¼º
 Bundle 'scrooloose/vim-statline'
 
-"¼¤»î²å¼şÓëÎÄ¼şÀàĞÍµÄÒÀÀµ¹ØÏµ
-filetype plugin indent on     " required! 
-"##########²å¼ş¹ÜÀí ½áÊø#############
+"è¿›è¡Œç‰ˆæƒå£°æ˜çš„è®¾ç½®
+Bundle 'AuthorInfo'
+let g:vimrc_author="xiaoyang.zhu"
+let g:vimrc_email="xiaoyang.zhu@ia.ac.cn"
+let g:vimrc_homepage="blog.csdn.net/zhuxiaoyang2000"
+nmap <F4> :AuthorInfoDetect<cr> 
 
-" tagsÄ¿Â¼
-set tags+=$VIM/vimfiles/tags/cpp
+"æ¿€æ´»æ’ä»¶ä¸æ–‡ä»¶ç±»å‹çš„ä¾èµ–å…³ç³»
+filetype plugin indent on     " required! 
+"##########æ’ä»¶ç®¡ç† ç»“æŸ#############
+
 
 " Define keyword.
 if !exists('g:neocomplcache_keyword_patterns')
@@ -201,16 +209,16 @@ let g:neocomplcache_enable_auto_select = 1
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" ±à¼­Ä£Ê½½øĞĞ¹â±êÒÆ¶¯
+" ç¼–è¾‘æ¨¡å¼è¿›è¡Œå…‰æ ‡ç§»åŠ¨
 inoremap <C-h> <left>
 inoremap <C-l> <right>
 inoremap <C-j> <C-o>gj
 inoremap <C-k> <C-o>gk
 
-"mm : ¹æ·¶ĞĞÊ×¿Õ¸ñ<cr>È¥³ı¶àÓà×Ö·û<cr>É¾³ı¿Õ°×ĞĞ<cr>¹æ·¶ĞĞÊı
+"mm : è§„èŒƒè¡Œé¦–ç©ºæ ¼<cr>å»é™¤å¤šä½™å­—ç¬¦<cr>åˆ é™¤ç©ºç™½è¡Œ<cr>è§„èŒƒè¡Œæ•°
 nmap mm :%s/\r//g<cr>
 
-"ff : Ç°ºó²¹È«
+"ff : å‰åè¡¥å…¨
 "vmap ff <Esc>`>i')?><Esc>`<i<?=$this->_('<Esc>
 vmap ff "zdi<?=$this->_('<C-R>z');?><ESC>
 
